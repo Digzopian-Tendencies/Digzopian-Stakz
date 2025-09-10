@@ -1,0 +1,18 @@
+---
+
+### `backend/main.py`
+```python
+from fastapi import FastAPI
+from stacks import audio, animatous, ecommerce, crypto, education, tasks, hermetica, stickbot
+
+app = FastAPI(title="Digzopian Tendencies API")
+
+# Routers
+app.include_router(audio.router, prefix="/audio", tags=["Digz Audio"])
+app.include_router(animatous.router, prefix="/animatous", tags=["Corpus Animatous"])
+app.include_router(ecommerce.router, prefix="/ecommerce", tags=["E-Commerce"])
+app.include_router(crypto.router, prefix="/crypto", tags=["Crypto Trading"])
+app.include_router(education.router, prefix="/education", tags=["Education"])
+app.include_router(tasks.router, prefix="/tasks", tags=["Job Stack"])
+app.include_router(hermetica.router, prefix="/hermetica", tags=["Hermetic Codex"])
+app.include_router(stickbot.router, prefix="/stickbot", tags=["StickBot"])
